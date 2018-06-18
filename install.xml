@@ -1,0 +1,306 @@
+<modification>
+    <name>Special Timer SynapseIndia</name>
+	<version>1.0</version>
+	<link>https://www.synapseindia.com/</link>
+	<author>SynapseIndia</author>
+	<code>special_timer_synapseindia</code>
+
+
+    <file path="catalog/view/theme/*/template/product/special.twig">
+		<operation>
+			<search position="replace"><![CDATA[{{ footer }}]]></search>
+			<add><![CDATA[{{ footer }} {% if special_timer_status and special_time_config_special_product_page %}<script type="text/javascript">
+$(document).ready(function(){
+jQuery('.time_special').each(function(){
+    var countTime=jQuery(this).attr('data-time');
+    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINs</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
+});
+});
+</script>{% endif %}]]></add>
+		</operation>
+		
+		
+		<operation>
+			<search position="replace"><![CDATA[<p>{{ product.description }}</p>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_special_product_page and product.special %}<div class="time_special"  data-time="{{ product.date_end_special  }}"></div>{% endif %}
+<p>{{ product.description }}</p>]]></add>
+		</operation>
+
+	</file>	
+	
+	<file path="catalog/view/theme/*/template/product/product.twig">
+		<operation>
+			<search position="replace"><![CDATA[{{ footer }}]]></search>
+			<add><![CDATA[{{ footer }}{% if special_timer_status and special_time_config_product_page %}<script type="text/javascript">
+$(document).ready(function(){
+jQuery('.time_special').each(function(){
+    var countTime=jQuery(this).attr('data-time');
+    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINs</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
+});
+});
+</script>{% endif %}]]></add>
+		</operation>
+		
+		
+		<operation>
+			<search position="replace"><![CDATA[<h1>{{ heading_title }}</h1>]]></search>
+			<add><![CDATA[<h1>{{ heading_title }}</h1>{% if special_timer_status and special_time_config_product_page and special %}<div class="time_special"  data-time="{{ date_end_special }}"></div>{% endif %}
+]]></add>
+		</operation>
+
+	</file>
+	
+	<file path="catalog/view/theme/*/template/product/category.twig">
+		<operation>
+			<search position="replace"><![CDATA[{{ footer }}]]></search>
+			<add><![CDATA[{{ footer }}{% if special_timer_status and special_time_config_special_product_category_page %}<script type="text/javascript">
+$(document).ready(function(){
+jQuery('.time_special').each(function(){
+    var countTime=jQuery(this).attr('data-time');
+    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINs</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
+});
+});
+</script>{% endif %}]]></add>
+		</operation>
+		
+		
+		<operation>
+			<search position="replace"><![CDATA[<p>{{ product.description }}</p>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_special_product_category_page and product.special %}<div class="time_special"  data-time="{{ product.date_end_special  }}"></div> {% endif %}
+<p>{{ product.description }}</p>]]></add>
+		</operation>
+
+	</file>
+	
+	<file path="catalog/view/theme/*/template/product/search.twig">
+		<operation>
+			<search position="replace"><![CDATA[{{ footer }}]]></search>
+			<add><![CDATA[{{ footer }}{% if special_timer_status and special_time_config_search_product_page %}<script type="text/javascript">
+$(document).ready(function(){
+jQuery('.time_special').each(function(){
+    var countTime=jQuery(this).attr('data-time');
+    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINs</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
+});
+});
+</script>{% endif %}]]></add>
+		</operation>
+		
+		
+		<operation>
+			<search position="replace"><![CDATA[<p>{{ product.description }}</p>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_search_product_page and product.special %}<div class="time_special"  data-time="{{ product.date_end_special  }}"></div>{% endif %}
+<p>{{ product.description }}</p>]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/view/theme/*/template/extension/module/special.twig">
+		<operation>
+			<search position="replace"><![CDATA[<h3>{{ heading_title }}</h3>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_special_product_module %}<script type="text/javascript">
+$(document).ready(function(){
+jQuery('.time_special').each(function(){
+    var countTime=jQuery(this).attr('data-time');
+    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINs</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
+});
+});
+</script> {% endif %}
+<h3>{{ heading_title }}</h3>]]></add>
+		</operation>
+		
+		<operation>
+			<search position="replace"><![CDATA[<p>{{ product.description }}</p>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_special_product_module and product.special %}<div class="time_special"  data-time="{{ product.date_end_special  }}"></div>{% endif %}
+<p>{{ product.description }}</p>]]></add>
+		</operation>
+
+	</file>
+	
+	<file path="catalog/view/theme/*/template/extension/module/latest.twig">
+		<operation>
+			<search position="replace"><![CDATA[<h3>{{ heading_title }}</h3>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_latest_product_page %}<script type="text/javascript">
+$(document).ready(function(){
+jQuery('.time_special').each(function(){
+    var countTime=jQuery(this).attr('data-time');
+    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINs</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
+});
+});
+</script>{% endif %}
+<h3>{{ heading_title }}</h3>]]></add>
+		</operation>
+		
+		<operation>
+			<search position="replace"><![CDATA[<p>{{ product.description }}</p>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_latest_product_page and product.special %}<div class="time_special"  data-time="{{ product.date_end_special  }}"></div>{% endif %}
+<p>{{ product.description }}</p>]]></add>
+		</operation>
+
+	</file>
+	
+	<file path="catalog/view/theme/*/template/extension/module/featured.twig">
+		<operation>
+			<search position="replace"><![CDATA[<h3>{{ heading_title }}</h3>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_featured_product_page %}<script type="text/javascript">
+$(document).ready(function(){
+jQuery('.time_special').each(function(){
+    var countTime=jQuery(this).attr('data-time');
+    jQuery(this).countdown(countTime,function(event){jQuery(this).html('<div class="day box-time-date"><span class="number">'+event.strftime('%D')+' </span>days</div> <div class="hour box-time-date"><span class="number">'+event.strftime('%H')+'</span>Hrs</div><div class="min box-time-date"><span class="number">'+event.strftime('%M')+'</span> MINs</div> <div class="sec box-time-date"><span class="number">'+event.strftime('%S')+' </span>SEC</div>');});
+});
+});
+</script> {% endif %}
+<h3>{{ heading_title }}</h3>]]></add>
+		</operation>
+		
+		<operation>
+			<search position="replace"><![CDATA[<p>{{ product.description }}</p>]]></search>
+			<add><![CDATA[{% if special_timer_status and special_time_config_featured_product_page  and product.special %}<div class="time_special"  data-time="{{ product.date_end_special  }}"></div>{% endif %}
+<p>{{ product.description }}</p>]]></add>
+		</operation>
+
+	</file>
+	
+	<file path="catalog/model/catalog/product.php">		
+		<operation>
+			<search><![CDATA[public function getTotalProductSpecials() {]]></search>
+			<add position="before"><![CDATA[public function getspecialtimer($product_id) {
+			      $sql="SELECT date_end as date_end_special FROM " . DB_PREFIX . "product_special ps WHERE ps.product_id = '" . (int)$product_id . "' AND ps.customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) ORDER BY ps.priority ASC, ps.price ASC LIMIT 1";
+				  
+				  
+				  $query = $this->db->query($sql);
+				  
+				  if ($query->num_rows) { 
+						$date_end_special = $query->row['date_end_special'];
+						if($date_end_special=='0000-00-00'){
+						$date_end_special = date('Y-m-d', strtotime('+1 year'));
+					    }
+					return $date_end_special;
+				  }else{
+				     return 0;
+				  }
+				  
+				  
+				  
+			}]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/controller/product/product.php">
+	        <operation>
+				<search><![CDATA[$data['rating'] = (int)$product_info['rating'];]]></search>
+				<add position="after"><![CDATA[$data['date_end_special']       =$this->model_catalog_product->getspecialtimer($product_info['product_id']);]]></add>
+	        </operation>
+			
+			
+			 <operation>
+				<search><![CDATA[public function index() {]]></search>
+				<add position="after"><![CDATA[$data['special_time_config_product_page']=$this->config->get('special_time_config_product_page');
+				$data['special_timer_status']=$this->config->get('special_timer_status');
+				if($this->config->get('special_timer_status')==1 && $this->config->get('special_time_config_product_page')==1){				            $this->document->addStyle('catalog/view/javascript/special_timer/special_timer.css');$this->document->addScript('catalog/view/javascript/special_timer/jquery.countdown.min.js');
+				}]]></add>
+	        </operation>
+	</file>
+	
+	<file path="catalog/controller/product/special.php">
+	       <operation>
+				<search><![CDATA[$data['products'][] = array(]]></search>
+				<add position="after"><![CDATA['date_end_special'        => $this->model_catalog_product->getspecialtimer($result['product_id']),]]></add>
+	        </operation>
+			
+			
+			 <operation>
+				<search><![CDATA[public function index() {]]></search>
+				<add position="after"><![CDATA[$data['special_time_config_special_product_page']=$this->config->get('special_time_config_special_product_page');
+				$data['special_timer_status']=$this->config->get('special_timer_status');
+				if($this->config->get('special_timer_status')==1 && $this->config->get('special_time_config_special_product_page')==1){				            $this->document->addStyle('catalog/view/javascript/special_timer/special_timer.css');$this->document->addScript('catalog/view/javascript/special_timer/jquery.countdown.min.js');
+				}]]></add>
+	        </operation>
+			
+	</file>
+	
+	<file path="catalog/controller/product/search.php">
+	  	       <operation>
+				<search><![CDATA[$data['products'][] = array(]]></search>
+				<add position="after"><![CDATA['date_end_special'        => $this->model_catalog_product->getspecialtimer($result['product_id']),]]></add>
+	        </operation>
+			 <operation>
+				<search><![CDATA[public function index() {]]></search>
+				<add position="after"><![CDATA[$data['special_time_config_search_product_page']=$this->config->get('special_time_config_search_product_page');
+				$data['special_timer_status']=$this->config->get('special_timer_status');
+				if($this->config->get('special_timer_status')==1 && $this->config->get('special_time_config_search_product_page')==1){				            $this->document->addStyle('catalog/view/javascript/special_timer/special_timer.css');$this->document->addScript('catalog/view/javascript/special_timer/jquery.countdown.min.js');
+				}]]></add>
+	        </operation>
+	</file>
+	
+	<file path="catalog/controller/product/category.php">
+	  	       <operation>
+				<search><![CDATA[$data['products'][] = array(]]></search>
+				<add position="after"><![CDATA['date_end_special'        => $this->model_catalog_product->getspecialtimer($result['product_id']),]]></add>
+	        </operation>
+			 <operation>
+				<search><![CDATA[public function index() {]]></search>
+				<add position="after"><![CDATA[$data['special_time_config_special_product_category_page']=$this->config->get('special_time_config_special_product_category_page');
+				$data['special_timer_status']=$this->config->get('special_timer_status');
+				if($this->config->get('special_timer_status')==1 && $this->config->get('special_time_config_special_product_category_page')==1){				            $this->document->addStyle('catalog/view/javascript/special_timer/special_timer.css');$this->document->addScript('catalog/view/javascript/special_timer/jquery.countdown.min.js');
+				}]]></add>
+	        </operation>
+	</file>
+	
+	
+	<file path="catalog/controller/extension/module/featured.php">
+	              <operation>
+				<search><![CDATA[$data['products'][] = array(]]></search>
+				<add position="after"><![CDATA['date_end_special'        => $this->model_catalog_product->getspecialtimer($product_info['product_id']),]]></add>
+	        </operation>
+			
+			<operation>
+				<search><![CDATA[public function index($setting) {]]></search>
+				<add position="after"><![CDATA[$data['special_time_config_featured_product_page']=$this->config->get('special_time_config_featured_product_page');
+				$data['special_timer_status']=$this->config->get('special_timer_status');
+				
+				if($this->config->get('special_timer_status')==1 && $this->config->get('special_time_config_featured_product_page')==1){				            $this->document->addStyle('catalog/view/javascript/special_timer/special_timer.css');
+		        $this->document->addScript('catalog/view/javascript/special_timer/jquery.countdown.min.js');
+				}
+				
+				]]></add>
+	        </operation>
+	</file>
+	
+	<file path="catalog/controller/extension/module/special.php">
+			<operation>
+				<search><![CDATA[$data['products'][] = array(]]></search>
+				<add position="after"><![CDATA['date_end_special'        => $this->model_catalog_product->getspecialtimer($result['product_id']),]]></add>
+	        </operation>
+			
+			<operation>
+				<search><![CDATA[public function index($setting) {]]></search>
+				<add position="after"><![CDATA[$data['special_time_config_special_product_module']=$this->config->get('special_time_config_special_product_module');
+				$data['special_timer_status']=$this->config->get('special_timer_status');
+				
+				if($this->config->get('special_timer_status')==1 && $this->config->get('special_time_config_special_product_module')==1){				            $this->document->addStyle('catalog/view/javascript/special_timer/special_timer.css');
+		        $this->document->addScript('catalog/view/javascript/special_timer/jquery.countdown.min.js');
+				}
+				
+				]]></add>
+	        </operation>
+	</file>
+	
+	<file path="catalog/controller/extension/module/latest.php">
+	        <operation>
+				<search><![CDATA[$data['products'][] = array(]]></search>
+				<add position="after"><![CDATA['date_end_special'        => $this->model_catalog_product->getspecialtimer($result['product_id']),]]></add>
+	        </operation>
+			
+			<operation>
+				<search><![CDATA[public function index($setting) {]]></search>
+				<add position="after"><![CDATA[$data['special_time_config_latest_product_page']=$this->config->get('special_time_config_latest_product_page');
+				$data['special_timer_status']=$this->config->get('special_timer_status');
+				
+				if($this->config->get('special_timer_status')==1 && $this->config->get('special_time_config_latest_product_page')==1){				            $this->document->addStyle('catalog/view/javascript/special_timer/special_timer.css');
+		        $this->document->addScript('catalog/view/javascript/special_timer/jquery.countdown.min.js');
+				}
+				
+				]]></add>
+	        </operation>
+	</file>
+	
+</modification>

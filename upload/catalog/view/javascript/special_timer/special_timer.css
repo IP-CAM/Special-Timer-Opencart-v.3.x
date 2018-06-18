@@ -1,0 +1,34 @@
+
+.time_special {
+	overflow: hidden;
+	display: inline-block;
+}
+.time_special .box-time-date {
+	background: #fbfbfb;
+	font-size: 9px;
+	color: #808080;
+	min-width: 48px;
+	min-height: 48px;
+	text-align: center;
+	margin-top: 7px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-radius: 0;
+	border: 1px #e8e8e8 solid;
+	display: inline-block;
+	margin-right:5px;
+}
+.time_special .box-time-date span {
+	display: block;
+	font-size: 16px;
+	color: #3f3f3f;
+	margin-top: 6px;
+}
+.box-timer {
+	left: 0px;
+	text-align: center;
+	margin-top: 0;
+	position: absolute;
+	bottom: 5%;
+	width:100%;
+} 
